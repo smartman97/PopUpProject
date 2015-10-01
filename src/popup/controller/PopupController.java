@@ -18,17 +18,17 @@ public class PopupController
 		String myName = myPopups.grabAnswer("Type in your name");
 		myPopups.showResponse("You typed in: " + myName);
 		
-		String temp = myPopups.grabAnswer("Type in your age");
+		String age = myPopups.grabAnswer("Type in your age");
 		int myAge;
 		
-		while(!isInteger(temp))
+		while(!isInteger(age))
 		{
-			temp = myPopups.grabAnswer("Type in a positive integer for your age!");
+			age = myPopups.grabAnswer("Type in a positive integer for your age!");
 		}
 		
-		if(isInteger(temp))
+		if(isInteger(age))
 		{
-			myAge = Integer.parseInt(temp);
+			myAge = Integer.parseInt(age);
 		}
 		else
 		{
@@ -37,12 +37,17 @@ public class PopupController
 		
 		myPopups.showResponse("You typed in: " + myAge);
 
-		String tempW = myPopups.grabAnswer("Type in your weight");
+		String weight = myPopups.grabAnswer("Type in your weight");
 		double myWeight;
 		
-		if(isDouble(temp))
+		while(!isDouble(weight))
 		{
-			myWeight = Double.parseDouble(tempW);
+			weight = myPopups.grabAnswer("Type in a positive double for your weight!");
+		}
+		
+		if(isDouble(weight))
+		{
+			myWeight = Double.parseDouble(weight);
 		}
 		else
 		{
@@ -60,12 +65,12 @@ public class PopupController
 		
 		try
 		{
-			int temp = Integer.parseInt(input);
+			int age = Integer.parseInt(input);
 			isInt = true;
 		}
 		catch(NumberFormatException error)
 		{
-			myPopups.showResponse("not an int - bad value will be used");
+			myPopups.showResponse("Not a valid Int.");
 		}
 		return isInt;
 	}
@@ -76,12 +81,12 @@ public class PopupController
 		
 		try
 		{
-			double temp = Double.parseDouble(input);
+			double weight = Double.parseDouble(input);
 			isDouble = true;
 		}
 		catch(NumberFormatException error)
 		{
-			myPopups.showResponse("not a double - bad value will be used");
+			myPopups.showResponse("Not a valid Double.");
 		}
 		return isDouble;
 	}

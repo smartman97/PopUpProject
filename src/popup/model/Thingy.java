@@ -13,12 +13,23 @@ public class Thingy
 	private int age;
 	private double weight;
 	
+	/**
+	 * Sets the default values for age, name, weight. They are crazy values.
+	 */
+	
 	public Thingy()
 	{
 		name = "";
 		age = 99;
 		weight = -.008;
 	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @param age
+	 * @param weight
+	 */
 	
 	public Thingy(String name, int age, double weight)
 	{
@@ -41,5 +52,20 @@ public class Thingy
 	public double getWeight()
 	{
 		return weight;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
+	
+	public void setWeight(double weight)
+	{
+		this.weight = weight;
 	}
 }
